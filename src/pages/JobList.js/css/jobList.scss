@@ -1,0 +1,42 @@
+
+.TopContainer{
+    padding: 10px;
+    border: 1px #ccc solid;
+    margin: 10px;
+    background-color: #f4f4f4;
+}
+.ListContainer{
+    padding: 10px;
+    border: 1px #ccc solid;
+    margin: 10px;
+    background-color: #f4f4f4;
+    height: max-content;
+    padding-right: 0;
+}
+
+.antInputClass{
+    border-radius: 0;
+}
+
+.jobTypeClass {
+    background-color:#d3d7e7;
+    font-weight: 500;
+    font-size: 11px;
+    color: #646570;
+}
+
+
+// Define your primary color
+$primary-color: #6295e3;
+ 
+.title-header {
+    margin: 0;       
+    border: none;    
+    padding: 0;      
+    height: 4px;
+    border-radius: 10px;    
+    width: 100px;     
+    background-color: $primary-color; 
+  }
+  
+ 
