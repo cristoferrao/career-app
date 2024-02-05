@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 
+
+
 export const joblistInitial = {
     JobList:[],
     searchOptions:{
@@ -16,10 +18,20 @@ export const joblistInitial = {
         function:[],
     }
 }
+const storedSearchOptions = localStorage.getItem("searchOptions");
+const parsedStoredSearchOptions = storedSearchOptions ? JSON.parse(storedSearchOptions) : {};
 
+// console.log({parsedStoredSearchOptions});
 const joblistSlice = createSlice({
     name: 'joblist',
-    initialState:joblistInitial,
+    initialState: {
+        ...joblistInitial,
+        searchOptions: {
+            
+            ...joblistInitial.searchOptions,
+            ...parsedStoredSearchOptions
+        }
+    },
     reducers: {
         setJobList(state, { payload }) {
             state.JobList = payload;
@@ -45,7 +57,9 @@ const joblistSlice = createSlice({
             state.searchOptions.function= payload;
         },
   
-
+        clearFullSearch(state){
+            state.searchOptions=joblistInitial.searchOptions;
+        },
         setDepartmentList(state, { payload }) {
             state.optionsList.department = payload;
         },
@@ -57,6 +71,17 @@ const joblistSlice = createSlice({
         },
 
 
+
+        settingToLocalStorage(state){
+            localStorage.setItem("searchOptions",JSON.stringify(state.searchOptions))
+        },
+        gettingToLocalStorage(state){
+            const dataLocal = JSON.parse(localStorage.getItem("searchOptions"));
+            if (dataLocal) {
+                state.searchOptions =  dataLocal;
+                
+            }
+        },
     },
   });
 

@@ -1,32 +1,34 @@
-import './App.css';
-import {
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-import JobList from './pages/JobList.js/JobList';
-import JobDetails from './pages/JobDetails/JobDetails';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Nav, NavLink,NavbarBrand } from 'react-bootstrap';
+import "./App.css";
+import { Switch, Route } from "react-router-dom";
+import JobList from "./pages/JobList.js/JobList";
+import JobDetails from "./pages/JobDetails/JobDetails";
+import { Nav, NavLink, NavbarBrand } from "react-bootstrap";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Image } from "antd";
+import GetPortalLogo from './assests/images/GetPortalLogo.png'
+import { Link } from "react-router-dom/cjs/react-router-dom";
 
 function App() {
 
-  // document.getElementsByTagName("body")[0].style="background-color:#282828;color:white;"
+  return (
+    <div className="p-2">
+      <Nav>
+        <Link to="/">
 
-  return (<div className='p-2' >
-    <Nav  >
-      {/* <h1>Jobs Website</h1> */}
-       <NavbarBrand className='ml-3'>Career Paths</NavbarBrand>
-    </Nav>
-    
-        <Switch>
-          <Route  exact path="/" component={JobList} />
-          <Route exact  path="/JobDetails" component={JobDetails} />
-        </Switch>
+        <NavbarBrand className="ml-3" >
+          <Image src={GetPortalLogo} preview={false } height={40}/>
+        </NavbarBrand>
+        </Link>
+        
+      </Nav>
 
-  </div> 
-    );
+      <Switch>
+        <Route exact path="/" component={JobList} />
+        <Route exact path="/JobDetails/:id" component={JobDetails} />
+      </Switch>
+    </div>
+  );
 }
 
 export default App;

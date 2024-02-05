@@ -25,6 +25,23 @@
     color: #646570;
 }
 
+.searchSelctedOptionsText {
+    background-color:#ffffff;
+    border: 1px solid #ccc;
+    font-weight: 500;
+    font-size: 13px;
+    color: #646570;
+    padding: 2px; 
+    // cursor: pointer;
+}
+
+.searchSelctedOptionsText:hover {
+    background-color:#f0f0f0;
+    border: 1px solid #ccc;
+    color: #646570;
+}
+ 
+
 
 // Define your primary color
 $primary-color: #6295e3;
@@ -40,3 +57,17 @@ $primary-color: #6295e3;
   }
   
  
+
+  .searchFullClear {
+    // background-color:#ffffff;
+    // border: 1px solid #ccc;
+    font-weight: 500;
+    font-size: 13px;
+    color: #646570;
+    // padding: 5px; 
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    cursor: pointer;
+}
